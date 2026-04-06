@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content design system — Sabrina Kan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Nunito:wght@300;400;600&family=DM+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-dot" aria-hidden="true"></span>
+      Sabrina Kan
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="case-studies.html">Case studies</a></li>
+      <li><a href="writing-samples.html">Writing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+
+  <!-- PAGE HERO -->
+  <header class="page-hero">
+    <div class="page-hero__inner">
+      <p class="page-hero__breadcrumb">
+        <a href="case-studies.html">← Case studies</a>
+        <span>/ 02</span>
+      </p>
+      <h1 class="page-hero__title">A content system designed to scale</h1>
+      <p class="page-hero__sub">
+        How I built a content design system from scratch, and roadmapped it all the way to AI.
+      </p>
+      <div class="page-hero__tags">
+        <span class="tag tag--blue">Content strategy</span>
+        <span class="tag tag--muted">B2B SaaS</span>
+        <span class="tag tag--muted">2023</span>
+        <span class="tag tag--muted">Content design lead</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- CASE STUDY BODY -->
+  <article class="case-detail">
+
+    <div class="case-overview">
+      <div class="case-overview__item">
+        <span class="case-overview__label">My Role</span>
+        <span class="case-overview__val">Content design lead</span>
+      </div>
+      <div class="case-overview__item">
+        <span class="case-overview__label">Timeline</span>
+        <span class="case-overview__val">3 years (2023-2026)</span>
+      </div>
+      <div class="case-overview__item">
+        <span class="case-overview__label">Deliverables</span>
+        <span class="case-overview__val">Style guide, glossary, content components</span>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h2 class="case-section__heading">Project overview</h2>
+      <p>
+        Clarity can make or break enterprise software. For busy IT admins managing thousands of devices across global organizations, a confusing dialog or inconsistent term can mean hours of productivity lost creating support tickets or deciphering documentation. The software should speed up their workflows, not get in their way. 
+      </p>
+      <p>
+        When I joined the Samsung Knox team, there were no content guardrails to prevent any of that from happening. 
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h2 class="case-section__heading">The problem</h2>
+      <p>
+        Without content guidelines, every writer, designer, and PM made their own calls. The result? A suite of products where descriptions and dialogs were inconsistent, different terms were used for the same concept, and the language often reflected the system's logic instead of the user's mental model. 
+      </p>
+      <p>
+        Here's what that looked like in practice.
+      </p>
+      <p>
+        <h3>A clarity problem</h3>
+      </p>
+      <img src="images/clarity-before-example.png" alt="A modal dialog titled 'Request Enrollment' with body text reading 'Are you sure to send an email with the installation guide?' and two buttons: Cancel and OK."/>
+      <p>
+        This dialog is grammatically awkward and unclear about the recipient, and confirmed with a button that doesn't tell users what they're actually doing. 
+      </p>
+      <p>
+        Now, here's that same dialog with our content guidelines applied: 
+      </p>
+      <img src="images/clarity-after-example.png" alt="A modal dialog titled 'Send enrollment guide?' with body text reading '%d users will receive an email with instructions on how to enroll their device.' and two buttons: Cancel and Send." />
+      <p>
+        While this enrollment dialog had a clarity problem, the next one was something more serious.
+      </p>
+      <p>
+        <h3>A risk communication problem</h3>
+      </p>
+      <img src="images/risk-before-example.png" alt="A modal dialog titled 'Test campaign' with two paragraphs of body text explaining dummy firmware behavior and recommending users revert devices after testing. Buttons: Cancel and Got it."/>
+      <p>
+        There's actually a critical warning buried in this dialog. If IT admins don't revert their original firmware by unassigning devices from the test campaigns afterwards, the consequences are irreversible.  
+      </p>
+      <p>
+        This version flags the action IT admins need to take to avoid permanent damage to their devices. 
+      </p>
+      <img src="images/risk-after-example.png" alt="A modal dialog titled 'About test campaigns' with three paragraphs explaining test campaign behavior, dummy firmware, and a bolded warning to 'unassign devices from test campaigns' as soon as testing is complete. Buttons: Go back and Got it." />
+      <p>
+        These examples might look like isolated problems, but they were actually symptoms of a product built without a shared content language. 
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h2 class="case-section__heading">Building the business case</h2>
+      <p>
+        Identifying the problem was easy, but getting the organizational support to solve it was a different challenge entirely. 
+      </p>
+      <p>
+        For context, Samsung Knox is a global enterprise operation. At that scale, I was facing deeply established workflows, entrenched ways of working, and no existing framework for UX writing to fit into. If I wanted to build a dedicated content design practice, I had to navigate that inertia at every level of the organization. 
+      </p>
+      <p>
+        So, I started at the top. To secure buy-in at the EVP level, I pitched a series of presentations focused on one key value proposition: UX writing is a low-lift lever with high impact. If done well, it increases returns by helping users actually use and purchase the product. If done poorly (or not at all), support tickets and cancellations would follow. 
+      </p>
+      <p>
+        I knew senior leadership responded well to competitive research, so I grounded the pitch in why Microsoft Intune, a major competitor, was so dominant in the market. Part of the answer was their deliberate investment in content design and UX writing, made evident by their public commitment to move writers further upstream to shape core product experiences. 
+      </p>
+      <p>
+        This EVP was known for asking pointed questions when a pitch had gaps. He had none, and we got the green light. 
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h2 class="case-section__heading">Building the relationships</h2>
+      <p>
+        That green light was just the beginning. Up next was a harder challenge–getting the global PMs in Korea, who had never worked with UX writers or content designers before, on board.
+      </p>
+      <p>
+        In a historically bureaucratic organization with well-established workflows, I knew a top-down mandate would only scratch the surface of what we needed to achieve. Real adoption meant UX writing needed to fit naturally into how PMs already work, without being an added layer of process to manage. 
+      </p>
+      <p>
+        I had the opportunity to travel to Korea, so I used it deliberately. Instead of presenting to all the PMs at once, I strategically met with them in smaller groups to facilitate discussion and build relationships. I wasn't there to sell them on UX writing as a concept–I wanted to show them how we could help them solve problems they were already facing. 
+      </p>
+      <p>
+        To help visualize our capabilities, I categorized our work into three levels:
+      </p>
+      <img src="images/content-design-inverted-pyramid.png" alt="An inverted pyramid diagram divided into three horizontal sections, labeled from top to bottom: Level 1 — Minor copy edits and content design (the highest volume of work, covering the everyday copy decisions that add up across a product suite); Level 2 — Strategic terminology and content consistency (setting standards for how and when important content appears to users); Level 3 — Information architecture and content strategy (shaping the product itself with feature naming, categorization, and structure)." />
+      <p>
+        For each level, I showed concrete examples of work we'd already done. Level 3 was especially interesting, because one insight we found during a card sorting exercise landed particularly well: users weren't looking for the Kiosk feature in its own menu–they expected to create kiosks directly in the profile creation workflow. This small structural decision had a significant usability impact, and it demonstrated the value of upstream content involvement.
+      </p>
+      <p>
+        Through those sessions, we formalized a model for how UX writers could slot into the existing release process with minimal added friction. PMs who had never worked with us before left with a clearer picture of what we did, why it mattered, and exactly where we fit.
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h2 class="case-section__heading">The system</h2>
+      <p>
+        With everyone on board, the real work began. Our mission was clear: build a content design system that would make B2B UX content consistent, scalable, and efficient to create. 
+      </p>
+      <p>
+        I designed a roadmap to get there in three phases.
+      </p>
+      <div class="process-steps">
+        <div class="process-step">
+          <span class="process-step__num">1</span>
+          <div>
+            <p class="process-step__title">The UX writing style guide (2023-2024)</p>
+            <p class="process-step__desc">The style guide was the obvious starting point. Without shared standards for voice, tone, grammar, and formatting, everything else would be built on an unstable foundation. We completed voice and tone guidelines in Q3 2023, style guidelines in Q4 2023, and component guidelines shortly after.</p>
+            <p class="process-step__desc">We saw the impact right away. PMs and designers alike, many of whom weren't native English speakers, told us that the content produced under the new guidelines was noticeably clearer and easier to understand. For a product used across six continents, that level of accessibility is essential. </p>
+          </div>
+        </div>
+        <div class="process-step">
+          <span class="process-step__num">2</span>
+          <div>
+            <p class="process-step__title">The glossary (2025)</p>
+            <p class="process-step__desc">The organization often faced developmental delays due to misinterpreted product requirements. The culprit? Inconsistent or unclear terminology. It was clear we needed a shared vocabulary from code to customer. If we were confused about our terms, that effect would be compounded for our users.</p>
+            <p class="process-step__desc">Before writing a single definition, we conducted two full terminology audits: one across Knox partner portals, and one across the Knox Admin Portal and its associated services. In total, we collected ~8,000 terms across all the portals. Only then did we begin building the glossary in two phases, starting with partner-facing terms before moving to admin-facing ones.</p>
+            <p class="process-step__desc">The final result was a glossary of ~250 terms, complete with definitions, usage notes, stop words, and product scopes. We also built the infrastructure to make the glossary more findable and usable, creating a searchable wiki repository for glossary entries. </p>
+            <div class="result-stats">
+              <div class="result-stat">
+                <span class="result-stat__val">~8,000</span>
+                <span class="result-stat__label">Total audited terms across all the portals.</span>
+              </div>
+              <div class="result-stat">
+                <span class="result-stat__val">~250</span>
+                <span class="result-stat__label">Glossary terms, including definitions, usage notes, stop words, and product scopes.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="process-step">
+          <span class="process-step__num">3</span>
+          <div>
+            <p class="process-step__title">Content component library and AI agent foundation (2026-)</p>
+            <p class="process-step__desc">This phase is where the foundational work pays off with a self-reinforcing system. A library of reusable content components will replace a large portion of the ad-hoc content creation, reducing variation and cutting translation costs significantly.</p>
+            <p class="process-step__desc">Then, to make the system scalable without reliance on writers' memory and static guidelines, we're training a custom AI agent on the content design system itself, complete with style guide, glossary, and content component library. With human-in-the-loop evaluations and iterative quality benchmarking, accuracy is built into the process. </p>
+            <p class="process-step__desc">Once this work is complete, writers will be freed up for more strategic initiatives–and we'll have reached the natural endpoint of a system designed from the beginning to scale.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h2 class="case-section__heading">The outcomes</h2>
+      <p>
+        The content design system not only improved the product experience, but it also changed how the organization thought about content. 
+      </p>
+      <h3>A practice built from scratch</h3>
+      <p>
+        When I started, the Samsung Knox UX writing discipline didn't exist at all. Now, we've grown from a one-person proofreading function to a six-person content design team, embedded in the product process from the start. We've come a long way from being brought in at the end to clean up copy.
+      </p>
+      <h3>Measurable cost savings</h3>
+      <p>
+        The content design system is estimated to cut translation costs by ~20% per release, which is a direct result of replacing ad-hoc string creation with reusable content components built into the design system.
+      </p>
+      <div class="result-stats">
+        <div class="result-stat">
+          <span class="result-stat__val">-20%</span>
+          <span class="result-stat__label">Estimated reduction in translation costs.</span>
+        </div>
+      </div>
+      <h3>Industry recognition </h3>
+      <p>
+        The work on Knox Manage and the Knox Design System was recognized with four international design awards: the iF Design Award (twice), the Red Dot Award, and the UX Design Award. The big win for writers? Content was credited alongside design. 
+      </p>
+      <h3>A foundation for what's next</h3>
+      <p>
+        The style guide, glossary, and content component library are designed to be foundational training data for our custom AI agent that's currently in active development. This system was designed from the beginning to scale, and AI is the logical next step to get there. 
+      </p>
+    </div>
+
+    <nav class="case-nav" aria-label="Case study navigation">
+      <a href="case-study-account.html" class="case-nav__link">
+        <span class="case-nav__label">← Previous</span>
+        <span class="case-nav__title">Switching to a new account system</span>
+      </a>
+      <a href="case-study-task.html" class="case-nav__link case-nav__link--right">
+        <span class="case-nav__label">Next →</span>
+        <span class="case-nav__title">Zero-to-One Task App</span>
+      </a>
+    </nav>
+
+  </article>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="index.html" class="footer__logo">
+        <span class="nav__logo-dot" aria-hidden="true"></span>
+        Sabrina Kan
+      </a>
+      <nav class="footer__links">
+        <a href="case-studies.html">Case Studies</a>
+        <a href="writing-samples.html">Writing</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Résumé</a>
+      </nav>
+      <span class="footer__copy">© 2026 Sabrina Kan</span>
+      <p class="footer__comment" aria-hidden="true">/* voice principle #1: sound like a person, not a product */</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

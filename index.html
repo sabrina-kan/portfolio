@@ -3,211 +3,343 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sabrina — Content Designer</title>
+  <title>Sabrina Kan — Content Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Nunito:wght@300;400;600&family=DM+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- NAV -->
   <nav class="nav">
-    <a href="#" class="nav__logo">Sabrina.</a>
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-dot" aria-hidden="true"></span>
+      Sabrina Kan
+    </a>
     <ul class="nav__links">
-      <li><a href="#work">Work</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="case-studies.html">Case studies</a></li>
+      <li><a href="writing-samples.html">Writing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
     </ul>
   </nav>
 
+  <main id="main-content">
+
   <!-- HERO -->
   <section class="hero">
+    <canvas class="hero__canvas" aria-hidden="true"></canvas>
+
+    <div class="hero__ascii" aria-hidden="true"><pre class="hero__ascii-panel">
+┌─ content.inspection ──────────────┐
+│ file    user_journey_v3.md        │
+│ status  ✓ clear                   │
+│ voice   human, direct             │
+│ grade   Flesch 74 (plain)         │
+│ errors  0 jargon · 0 passive      │
+│ em_dash ∞                         │
+│                                   │
+│ // no filler. no fluff.           │
+│ // just signal.                   │
+└───────────────────────────────────┘</pre></div>
+
     <div class="hero__content">
-      <p class="hero__eyebrow">Content Designer</p>
-      <h1 class="hero__headline">
-        Words that make<br />
-        products feel human.
+      <p class="hero__eyebrow reveal reveal-1" data-tw="Specialty: Systems and processes"></p>
+      <h1 class="hero__title reveal reveal-2">
+        Content that speaks both<br /><em>human </em>and <em>machine</em>.<span class="hero__cursor" aria-hidden="true"></span>
       </h1>
-      <p class="hero__sub">
-        I design content systems, UX copy, and voice guidelines that help
-        people actually understand—and enjoy—the products they use.
+      <p class="hero__sub reveal reveal-3">
+        Hi there, I'm Sabrina! I'm a content designer who thrives on untangling 
+        content challenges that enterprise teams have been wrestling with for years.
       </p>
-      <a href="#work" class="btn">See my work</a>
+      <p class="hero__sub reveal reveal-3">
+        If your content is complex, siloed, or not scaling the way it should, let's talk. 
+      </p>
+      <div class="hero__actions reveal reveal-4">
+        <a href="case-studies.html" class="btn btn--primary">Go to case studies</a>
+        <a href="about.html" class="btn btn--outline">About me</a>
+      </div>
     </div>
-    <div class="hero__scroll-hint" aria-hidden="true">↓</div>
   </section>
 
-  <!-- WORK -->
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span class="ticker__item">plain language is radical honesty.</span>
+      <span class="ticker__sep">✦</span>
+      <span class="ticker__item">if in doubt, cut it out.</span>
+      <span class="ticker__sep">✦</span>
+      <span class="ticker__item">em dash enthusiast.</span>
+      <span class="ticker__sep">✦</span>
+      <span class="ticker__item">words are UX.</span>
+      <span class="ticker__sep">✦</span>
+      <span class="ticker__item">clarity &gt; cleverness.</span>
+      <span class="ticker__sep">✦</span>
+      <span class="ticker__item">content is infrastructure.</span>
+      <span class="ticker__sep">✦</span>
+      <span class="ticker__item">the best copy goes unnoticed.</span>
+      <span class="ticker__sep">✦</span>
+      <span class="ticker__item">passive voice was avoided.</span>
+      <span class="ticker__sep">✦</span>
+      <span class="ticker__item">oxford comma always.</span>
+      <span class="ticker__sep">✦</span>
+      <span class="ticker__item">Plain language is radical honesty.</span>
+      <span class="ticker__sep">✦</span>
+      <span class="ticker__item">if in doubt, cut it out.</span>
+      <span class="ticker__sep">✦</span>
+      <span class="ticker__item">em dash enthusiast.</span>
+      <span class="ticker__sep">✦</span>
+      <span class="ticker__item">words are UX.</span>
+      <span class="ticker__sep">✦</span>
+      <span class="ticker__item">clarity &gt; cleverness.</span>
+      <span class="ticker__sep">✦</span>
+      <span class="ticker__item">content is infrastructure.</span>
+      <span class="ticker__sep">✦</span>
+      <span class="ticker__item">the best copy goes unnoticed.</span>
+      <span class="ticker__sep">✦</span>
+      <span class="ticker__item">write for the anxious user.</span>
+      <span class="ticker__sep">✦</span>
+      <span class="ticker__item">passive voice was avoided.</span>
+      <span class="ticker__sep">✦</span>
+      <span class="ticker__item">oxford comma always.</span>
+      <span class="ticker__sep">✦</span>
+    </div>
+  </div>
+
+  <!-- FEATURED WORK -->
   <section class="section" id="work">
     <div class="container">
-      <h2 class="section__title">Selected Work</h2>
-      <p class="section__sub">Case studies across fintech, health, and productivity.</p>
-
-      <div class="grid">
-
-        <article class="card">
-          <div class="card__tag">UX Writing</div>
-          <h3 class="card__title">Redesigning onboarding for a neobank</h3>
-          <p class="card__desc">
-            Rewrote 40+ onboarding screens to reduce drop-off by 23%. Focused
-            on progressive disclosure and plain-language error messages.
-          </p>
-          <div class="card__meta">
-            <span>Fintech</span>
-            <span>·</span>
-            <span>2024</span>
-          </div>
-          <a href="#" class="card__link">Read case study →</a>
-        </article>
-
-        <article class="card">
-          <div class="card__tag">Content Strategy</div>
-          <h3 class="card__title">Building a voice &amp; tone guide from scratch</h3>
-          <p class="card__desc">
-            Created a scalable content system for a 60-person product org—
-            including voice principles, pattern library, and component-level copy specs.
-          </p>
-          <div class="card__meta">
-            <span>Health Tech</span>
-            <span>·</span>
-            <span>2024</span>
-          </div>
-          <a href="#" class="card__link">Read case study →</a>
-        </article>
-
-        <article class="card">
-          <div class="card__tag">End-to-End Design</div>
-          <h3 class="card__title">Zero-to-one: a collaborative task app</h3>
-          <p class="card__desc">
-            Partnered with product and design to define information architecture,
-            label taxonomy, and empty states for a brand-new productivity tool.
-          </p>
-          <div class="card__meta">
-            <span>SaaS</span>
-            <span>·</span>
-            <span>2023</span>
-          </div>
-          <a href="#" class="card__link">Read case study →</a>
-        </article>
-
-        <article class="card">
-          <div class="card__tag">Accessibility</div>
-          <h3 class="card__title">Auditing microcopy for inclusive language</h3>
-          <p class="card__desc">
-            Led a content audit across 200+ UI strings to improve readability
-            scores and WCAG compliance, collaborating with accessibility engineers.
-          </p>
-          <div class="card__meta">
-            <span>Enterprise</span>
-            <span>·</span>
-            <span>2023</span>
-          </div>
-          <a href="#" class="card__link">Read case study →</a>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS BAND -->
-  <section class="band">
-    <div class="container band__inner">
-      <div class="band__item">
-        <span class="band__icon" aria-hidden="true">✦</span>
-        <span>UX Writing</span>
-      </div>
-      <div class="band__item">
-        <span class="band__icon" aria-hidden="true">✦</span>
-        <span>Content Strategy</span>
-      </div>
-      <div class="band__item">
-        <span class="band__icon" aria-hidden="true">✦</span>
-        <span>Voice &amp; Tone</span>
-      </div>
-      <div class="band__item">
-        <span class="band__icon" aria-hidden="true">✦</span>
-        <span>Information Architecture</span>
-      </div>
-      <div class="band__item">
-        <span class="band__icon" aria-hidden="true">✦</span>
-        <span>Design Systems</span>
-      </div>
-      <div class="band__item">
-        <span class="band__icon" aria-hidden="true">✦</span>
-        <span>Accessibility</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="section section--alt" id="about">
-    <div class="container about">
-      <div class="about__text">
-        <h2 class="section__title">About me</h2>
-        <p>
-          I'm a content designer with 6+ years of experience shaping how
-          products speak to people. I've worked embedded on cross-functional
-          teams at startups and scale-ups, bridging the gap between product,
-          design, and engineering.
-        </p>
-        <p>
-          My process starts with listening—to users, stakeholders, and the
-          product itself—then translating messy realities into clear, consistent
-          language that actually works.
-        </p>
-        <p>
-          When I'm not sweating the words, I'm probably thinking about
-          information architecture, teaching a content writing workshop, or
-          hunting for a great flat white.
-        </p>
-        <div class="about__tools">
-          <span class="pill">Figma</span>
-          <span class="pill">Notion</span>
-          <span class="pill">Contentful</span>
-          <span class="pill">Maze</span>
-          <span class="pill">Jira</span>
-          <span class="pill">Miro</span>
-        </div>
-      </div>
-      <div class="about__avatar" aria-hidden="true">
-        <div class="avatar-placeholder">S</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="container contact">
-      <h2 class="section__title">Let's work together</h2>
-      <p class="section__sub">
-        Open to freelance projects and full-time roles. Drop me a line.
+      <span class="eyebrow scroll-reveal">Selected work</span>
+      <h2 class="section__title scroll-reveal">Case studies</h2>
+      <p class="section__lead scroll-reveal">
+        A curated selection of projects that focus on different content challenges.
       </p>
-      <form class="form" novalidate>
-        <div class="form__row">
-          <label class="form__label" for="name">Name</label>
-          <input class="form__input" id="name" type="text" placeholder="Your name" autocomplete="name" />
-        </div>
-        <div class="form__row">
-          <label class="form__label" for="email">Email</label>
-          <input class="form__input" id="email" type="email" placeholder="you@company.com" autocomplete="email" />
-        </div>
-        <div class="form__row">
-          <label class="form__label" for="message">Message</label>
-          <textarea class="form__input form__textarea" id="message" placeholder="Tell me about your project…" rows="5"></textarea>
-        </div>
-        <button type="submit" class="btn">Send message</button>
-      </form>
+
+      <div class="work-grid">
+
+        <a href="case-study-account.html" class="card card--green scroll-reveal">
+          <div class="card__eyebrow">
+            <span class="tag tag--green">Content design</span>
+            <span class="card__num">01</span>
+          </div>
+          <h3 class="card__title">Switching 50,000+ users to a new account system without losing them</h3>
+          <p class="card__body">
+            Rewrote 40+ screens to cut drop-off by 23%, using progressive
+            disclosure and plain-language error messages.
+          </p>
+          <div class="card__footer">
+            <span class="card__meta">2025</span>
+            <span class="card__link">Read more →</span>
+          </div>
+        </a>
+
+        <a href="case-study-system.html" class="card card--blue scroll-reveal" style="transition-delay:.1s">
+          <div class="card__eyebrow">
+            <span class="tag tag--blue">Content strategy</span>
+            <span class="card__num">02</span>
+          </div>
+          <h3 class="card__title">A content system designed to scale</h3>
+          <p class="card__body">
+            Created a scalable content system for a 60-person product org,
+            including voice principles and a component-level pattern library.
+          </p>
+          <div class="card__footer">
+            <span class="card__meta">2023</span>
+            <span class="card__link">Read more →</span>
+          </div>
+        </a>
+
+        <a href="case-study-task.html" class="card card--purple scroll-reveal" style="transition-delay:.2s">
+          <div class="card__eyebrow">
+            <span class="tag tag--purple">End-to-End</span>
+            <span class="card__num">03</span>
+          </div>
+          <h3 class="card__title">Zero-to-One: A Collaborative Task App</h3>
+          <p class="card__body">
+            Partnered with product and design to define IA, label taxonomy,
+            and empty states for a brand-new productivity tool.
+          </p>
+          <div class="card__footer">
+            <span class="card__meta">SaaS · 2023</span>
+            <span class="card__link">Read more →</span>
+          </div>
+        </a>
+
+      </div>
     </div>
   </section>
+
+  <!-- BEFORE / AFTER -->
+  <section class="section section--alt">
+    <div class="container">
+      <span class="eyebrow scroll-reveal">The craft</span>
+      <h2 class="section__title scroll-reveal">Content design in action</h2>
+      <p class="section__lead scroll-reveal">
+        The job isn't writing from scratch — it's rewriting until it's right.
+        Here's what that actually looks like.
+      </p>
+
+      <div class="ba-grid">
+
+        <div class="ba-card scroll-reveal">
+          <div class="ba-card__header">
+            <span class="ba-icon">⚠</span>
+            <span class="ba-context">Error message</span>
+          </div>
+          <div class="ba-pane ba-pane--before">
+            <span class="ba-label ba-label--before">Before</span>
+            <p class="ba-text">"Invalid input. Please try again."</p>
+          </div>
+          <div class="ba-pane ba-pane--after">
+            <span class="ba-label ba-label--after">After</span>
+            <p class="ba-text">"Your password needs at least 8 characters — try adding a number or symbol."</p>
+          </div>
+        </div>
+
+        <div class="ba-card scroll-reveal" style="transition-delay:.1s">
+          <div class="ba-card__header">
+            <span class="ba-icon">□</span>
+            <span class="ba-context">Empty state</span>
+          </div>
+          <div class="ba-pane ba-pane--before">
+            <span class="ba-label ba-label--before">Before</span>
+            <p class="ba-text">"No items found."</p>
+          </div>
+          <div class="ba-pane ba-pane--after">
+            <span class="ba-label ba-label--after">After</span>
+            <p class="ba-text">"Nothing here yet — add your first task to start tracking your progress."</p>
+          </div>
+        </div>
+
+        <div class="ba-card scroll-reveal" style="transition-delay:.2s">
+          <div class="ba-card__header">
+            <span class="ba-icon">⚖</span>
+            <span class="ba-context">Legal/compliance copy</span>
+          </div>
+          <div class="ba-pane ba-pane--before">
+            <span class="ba-label ba-label--before">Before</span>
+            <p class="ba-text">"Complete mandatory identity verification as required by FCA regulations."</p>
+          </div>
+          <div class="ba-pane ba-pane--after">
+            <span class="ba-label ba-label--after">After</span>
+            <p class="ba-text">"We need to verify your identity — it's a legal requirement and takes about 2 minutes."</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WAVE DIVIDER -->
+  <div class="wave-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 56" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,28 C360,56 1080,0 1440,28 L1440,56 L0,56 Z" fill="#131418"/>
+    </svg>
+  </div>
+
+  <!-- WRITING TEASER -->
+  <section class="section section--alt">
+    <div class="container">
+      <span class="eyebrow scroll-reveal">Writing</span>
+      <h2 class="section__title scroll-reveal">Recent pieces</h2>
+      <p class="section__lead scroll-reveal">
+        Essays, guides, and opinions on content design, plain language, and
+        the craft of writing for digital products.
+      </p>
+
+      <div class="writing-list scroll-reveal">
+
+        <a class="writing-item" href="writing-samples.html">
+          <span class="writing-item__num">01</span>
+          <div class="writing-item__content">
+            <span class="writing-item__type">Essay</span>
+            <p class="writing-item__title">The Case for Plain Language in Financial Products</p>
+            <p class="writing-item__excerpt">
+              When users can't understand their own bank, trust evaporates. Plain
+              language isn't dumbing things down — it's respecting your users' time.
+            </p>
+          </div>
+          <span class="writing-item__link">Read →</span>
+        </a>
+
+        <a class="writing-item" href="writing-samples.html">
+          <span class="writing-item__num">02</span>
+          <div class="writing-item__content">
+            <span class="writing-item__type">Guide</span>
+            <p class="writing-item__title">How to Write Error Messages That Don't Make Users Feel Stupid</p>
+            <p class="writing-item__excerpt">
+              The worst error messages blame the user. The best ones apologise,
+              explain what happened, and tell people exactly what to do next.
+            </p>
+          </div>
+          <span class="writing-item__link">Read →</span>
+        </a>
+
+        <a class="writing-item" href="writing-samples.html">
+          <span class="writing-item__num">03</span>
+          <div class="writing-item__content">
+            <span class="writing-item__type">Explainer</span>
+            <p class="writing-item__title">Content Design vs. UX Writing: What's the Difference?</p>
+            <p class="writing-item__excerpt">
+              The titles are often used interchangeably, but the disciplines are
+              meaningfully distinct — and the difference matters for how you hire and how you work.
+            </p>
+          </div>
+          <span class="writing-item__link">Read →</span>
+        </a>
+
+      </div>
+
+      <div style="margin-top:2rem">
+        <a href="writing-samples.html" class="btn btn--outline scroll-reveal">View all writing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAVE DIVIDER (reverse) -->
+  <div class="wave-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 56" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,28 C360,0 1080,56 1440,28 L1440,0 L0,0 Z" fill="#131418"/>
+    </svg>
+  </div>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-block scroll-reveal">
+        <h2 class="cta-block__title">Let's work together.</h2>
+        <p class="cta-block__sub">
+          Open to full-time roles and freelance projects. If you have a complex
+          content problem, I'd love to hear about it.
+        </p>
+        <div class="cta-block__actions">
+          <a href="mailto:hello@sabrinakan.com" class="btn btn--primary">Get in touch</a>
+          <a href="resume.html" class="btn btn--outline">View resume</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer__inner">
-      <span class="nav__logo">Sabrina.</span>
-      <div class="footer__links">
-        <a href="#">LinkedIn</a>
-        <a href="#">Read.cv</a>
-        <a href="#">Email</a>
-      </div>
-      <span class="footer__copy">&copy; 2026</span>
+      <a href="index.html" class="footer__logo">
+        <span class="nav__logo-dot" aria-hidden="true"></span>
+        Sabrina Kan
+      </a>
+      <nav class="footer__links">
+        <a href="case-studies.html">Case studies</a>
+        <a href="writing-samples.html">Writing</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Resume</a>
+      </nav>
+      <span class="footer__copy">© 2026 Sabrina Kan</span>
+      <p class="footer__comment" aria-hidden="true">/* made with care, coffee, and ∞ em dashes */</p>
     </div>
   </footer>
 
