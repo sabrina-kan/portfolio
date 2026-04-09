@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teaching a machine to govern content — Sabrina Kan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Nunito:wght@300;400;600&family=DM+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-dot" aria-hidden="true"></span>
+      Sabrina Kan
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="case-studies.html">Case studies</a></li>
+      <li><a href="writing-samples.html">Writing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+    </ul>
+    <button class="nav__hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main id="main-content">
+
+  <!-- PAGE HERO -->
+  <header class="page-hero">
+    <div class="page-hero__inner">
+      <p class="page-hero__breadcrumb">
+        <a href="case-studies.html">← Case studies</a>
+        <span>/ 02</span>
+      </p>
+      <h1 class="page-hero__title">Teaching a machine to govern content</h1>
+      <p class="page-hero__sub">
+        How I designed an AI-powered review system to scale content governance across a growing team — all without adding process overhead.
+      </p>
+      <div class="page-hero__tags">
+        <span class="tag tag--purple">AI strategy</span>
+        <span class="tag tag--muted">2026 – ongoing</span>
+        <span class="tag tag--muted">Content design lead</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- CASE STUDY BODY -->
+  <article class="case-detail">
+
+    <!-- Overview grid -->
+    <div class="case-overview">
+      <div class="case-overview__item">
+        <span class="case-overview__label">My role</span>
+        <span class="case-overview__val">Content design lead</span>
+      </div>
+      <div class="case-overview__item">
+        <span class="case-overview__label">Timeline</span>
+        <span class="case-overview__val">2026 – ongoing</span>
+      </div>
+      <div class="case-overview__item">
+        <span class="case-overview__label">Deliverables</span>
+        <span class="case-overview__val">AI agent, evaluation framework, governance model</span>
+      </div>
+    </div>
+
+    <!-- Project overview -->
+    <div class="case-section">
+      <h2 class="case-section__heading">Project overview</h2>
+      <p>
+        As the content design team scaled from one to six people, informal content quality processes stopped being viable. Reviews were inconsistent. Style guide adherence was dependent on whoever happened to review a given string. And with a 20-product platform and ~50 contributors outside the team, we had no way to catch issues upstream.
+      </p>
+      <p>
+        The solution: build an AI-powered content review agent that could encode the team's standards, flag issues at scale, and free up human review cycles for the judgment calls that actually require a person.
+      </p>
+    </div>
+
+    <!-- The problem -->
+    <div class="case-section">
+      <h2 class="case-section__heading">The problem</h2>
+      <p>
+        Manual content reviews don't scale. As the team grew, I noticed three patterns:
+      </p>
+      <ul>
+        <li><strong>Inconsistency at the edges.</strong> Contributors outside the content team weren't catching style issues because they didn't know the rules. By the time strings reached review, dozens of decisions had already been made.</li>
+        <li><strong>Review bottlenecks.</strong> Every piece of UI copy required a content designer sign-off. That worked when there was one product. It broke down at ten.</li>
+        <li><strong>Style guide drift.</strong> The style guide existed, but it wasn't operationalized. Writers referenced it inconsistently, and no one had time to audit every release.</li>
+      </ul>
+    </div>
+
+    <!-- The constraint -->
+    <div class="case-section">
+      <h2 class="case-section__heading">The constraint</h2>
+      <p>
+        We couldn't add headcount. The ask was to scale governance without adding process overhead — meaning whatever we built had to be low-friction to use and easy to maintain.
+      </p>
+      <p>
+        That ruled out more checklists, more review stages, or any solution that required a human to do more work. The system needed to do the work.
+      </p>
+    </div>
+
+    <!-- The insight -->
+    <div class="case-section">
+      <h2 class="case-section__heading">The insight</h2>
+      <p>
+        Most content review tasks aren't judgment calls — they're pattern matching. Capitalization, punctuation, tone markers, prohibited terms, button label conventions: these are rules, not taste. And rules can be encoded.
+      </p>
+      <div class="callout">
+        <p>If I could separate the rule-based work from the judgment-based work, I could automate the former and focus the team on the latter.</p>
+      </div>
+      <p>
+        The question wasn't whether to use AI — it was what to teach it, and how to know if it was learning the right things.
+      </p>
+    </div>
+
+    <!-- The approach -->
+    <div class="case-section">
+      <h2 class="case-section__heading">The approach</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <span class="process-step__num">1</span>
+          <div>
+            <p class="process-step__title">Structuring the knowledge base</p>
+            <p class="process-step__desc">Before any model could be built, I had to make our standards machine-readable. I audited the existing style guide and categorized every rule by type: prescriptive (always do X), prohibitive (never do Y), and contextual (do X when Z).</p>
+            <p class="process-step__desc">Contextual rules were the hardest to encode — they required me to make implicit knowledge explicit. This surfaced gaps in the style guide itself, which I documented and resolved as I went.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <span class="process-step__num">2</span>
+          <div>
+            <p class="process-step__title">Sequencing the content architecture</p>
+            <p class="process-step__desc">I designed the agent's review logic in layers: surface-level checks first (spelling, casing, punctuation), then structural checks (label length, parallel construction, empty state completeness), then tone and clarity checks last.</p>
+            <p class="process-step__desc">Sequencing mattered because later checks are only meaningful if earlier ones pass. A tone flag on a string with a spelling error is noise — it dilutes signal and erodes trust in the system.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <span class="process-step__num">3</span>
+          <div>
+            <p class="process-step__title">Building the evaluation framework</p>
+            <p class="process-step__desc">With any AI system, the real design challenge is evaluation: how do you know it's working? I built a test set of ~200 strings — a mix of real production copy and intentionally flawed examples — and defined pass/fail criteria for each check.</p>
+            <p class="process-step__desc">We run iterative quality benchmarking cycles, tracking precision and recall by check type. When the agent flags something a human wouldn't, we investigate whether the rule needs refinement or the agent needs retraining. The evaluation framework keeps the human-in-the-loop without making every decision human-dependent.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The outcomes -->
+    <div class="case-section">
+      <h2 class="case-section__heading">The outcomes</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <span class="process-step__num">1</span>
+          <div>
+            <p class="process-step__title">Content review coverage at scale</p>
+            <p class="process-step__desc">The agent now runs on every content submission across the platform, catching rule-based issues before they reach a human reviewer. The team's review time shifted from catching mechanical errors to making strategic decisions.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <span class="process-step__num">2</span>
+          <div>
+            <p class="process-step__title">A living style guide</p>
+            <p class="process-step__desc">The process of making our standards machine-readable also made them clearer to humans. The structured rule taxonomy is now used as the canonical reference for onboarding new writers and resolving style disagreements.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <span class="process-step__num">3</span>
+          <div>
+            <p class="process-step__title">A replicable governance model</p>
+            <p class="process-step__desc">The framework — structured knowledge base, layered review logic, test-set evaluation — is designed to be replicable. Other teams at the company have expressed interest in adapting it for localization QA and accessibility checks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prev/Next nav -->
+    <nav class="case-nav" aria-label="Case study navigation">
+      <a href="case-study-system.html" class="case-nav__link">
+        <span class="case-nav__label">← Previous</span>
+        <span class="case-nav__title">Content design system</span>
+      </a>
+      <a href="case-study-account.html" class="case-nav__link case-nav__link--right">
+        <span class="case-nav__label">Next →</span>
+        <span class="case-nav__title">Account management system</span>
+      </a>
+    </nav>
+
+  </article>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="index.html" class="footer__logo">
+        <span class="nav__logo-dot" aria-hidden="true"></span>
+        Sabrina Kan
+      </a>
+      <nav class="footer__links">
+        <a href="case-studies.html">Case studies</a>
+        <a href="writing-samples.html">Writing</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Resume</a>
+      </nav>
+      <span class="footer__copy">© 2026 Sabrina Kan</span>
+      <p class="footer__comment" aria-hidden="true">/* naming things is the hardest part · rules before taste · humans for the judgment calls */</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

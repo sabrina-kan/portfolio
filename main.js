@@ -123,6 +123,28 @@ document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe
 })();
 
 // ============================================================
+// MOBILE NAV — hamburger toggle
+// ============================================================
+(function () {
+  const nav       = document.querySelector('.nav');
+  const hamburger = document.querySelector('.nav__hamburger');
+  if (!nav || !hamburger) return;
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('nav--open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Close menu when a nav link is clicked
+  document.querySelectorAll('.nav__links a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('nav--open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+
+// ============================================================
 // RESUME PRINT BUTTON
 // ============================================================
 const printBtn = document.querySelector('.btn--print');

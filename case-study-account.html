@@ -20,11 +20,14 @@
     </a>
     <ul class="nav__links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="case-studies.html">Case studies</a></li>
       <li><a href="writing-samples.html">Writing</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="resume.html">Résumé</a></li>
+      <li><a href="resume.html">Resume</a></li>
     </ul>
+    <button class="nav__hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <main id="main-content">
@@ -34,14 +37,14 @@
     <div class="page-hero__inner">
       <p class="page-hero__breadcrumb">
         <a href="case-studies.html">← Case studies</a>
-        <span>/ 01</span>
+        <span>/ 03</span>
       </p>
       <h1 class="page-hero__title">Switching 50,000+ users without losing them</h1>
       <p class="page-hero__sub">
         A complex transition for an account management system, meaning every content touchpoint had to carry its weight. 
       </p>
       <div class="page-hero__tags">
-        <span class="tag tag--green">Content design</span>
+        <span class="tag tag--blue">Content design</span>
         <span class="tag tag--muted">2025</span>
         <span class="tag tag--muted">Lead UX writer</span>
       </div>
@@ -135,9 +138,6 @@
         PMs were using the term “conflict” in user stories to indicate that the user's email address was the same in both the B2B and B2C systems, which requires the user to change their email address in the B2C system after the migration.
       </p>
       <p>
-        [Example of before content]
-      </p>
-      <p>
         However, in user testing, we uncovered that the term "conflict" <i>actually meant the opposite</i> to many participants, leading them to assume their email addresses in the B2B and B2C systems needed to match. 
       </p>
       <div class="callout">
@@ -146,9 +146,10 @@
       <p>
         We revised the content to write around the term "conflict", and the confusion was resolved.
       </p>
-      <p>
-        [Example of after content]
-      </p>
+      <button class="case-img-btn" onclick="openCaseLightbox('images/account-switch-before-you-start.png', 'Informational screen with switch process diagram and description content')">
+        <img src="images/account-switch-before-you-start.png" alt="Informational screen with switch process diagram and description content" class="case-img-btn__img" />
+        <span class="case-img-btn__hint">Click to enlarge</span>
+      </button>
     </div>
 
     <div class="case-section">
@@ -157,18 +158,22 @@
         We also encountered a similar issue in user testing with the term “migration”, which was also used frequently in the user stories.
       </p>
       <p>
-        We initially labelled the primary CTA “Migrate to [B2B account management system]”, and peppered the term throughout the rest of the workflow.
+        We initially labelled the primary CTA “Migrate to Samsung account for Business”, and peppered the term throughout the rest of the workflow.
       </p>
       <p>
         However, participants interpreted “migration” to mean that all their account data would be moved from the B2C system to the B2B system, and their B2C account would be deleted. That wasn't the case, though–both accounts could continue to exist. 
       </p>
       <p>So, what were our options?</p>
       <ul>
-        <li><strong>Migrate</strong> to [B2B account management system] — it's not a migration.</li>
-        <li><strong>Transition</strong> to [B2B account management system] — transition from <em>what</em>? Too lengthy to clarify through UI copy, and implies a long, drawn-out process.</li>
-        <li><strong>Switch</strong> to [B2B account management system] — conveys a two-track approach where both systems run in parallel, and connotes a quicker, snappier process.</li>
+        <li><strong>Migrate</strong> to Samsung account for Business — it's not a migration.</li>
+        <li><strong>Transition</strong> to Samsung account for Business — transition from <em>what</em>? Too lengthy to clarify through UI copy, and implies a long, drawn-out process.</li>
+        <li><strong>Switch</strong> to Samsung account for Business — conveys a two-track approach where both systems run in parallel, and connotes a quicker, snappier process.</li>
       </ul>
-      <p>We finally landed on the third option: “Switch to [B2B account management system]”. Accurate, clear, and adheres to plain English principles.</p>
+      <p>We finally landed on: <strong>“Switch sign-in method to Samsung account for Business”</strong>. More accurate, clear, and adheres to plain English principles.</p>
+      <button class="case-img-btn" onclick="openCaseLightbox('images/account-switch-steps.png', 'Account switch steps diagram')">
+        <img src="images/account-switch-steps.png" alt="Account switch steps diagram" class="case-img-btn__img" />
+        <span class="case-img-btn__hint">Click to enlarge</span>
+      </button>
     </div>
 
     <!-- Solution -->
@@ -269,19 +274,34 @@
 
     <!-- Prev/Next nav -->
     <nav class="case-nav" aria-label="Case study navigation">
-      <a href="case-studies.html" class="case-nav__link">
-        <span class="case-nav__label">← Back</span>
-        <span class="case-nav__title">All case studies</span>
+      <a href="case-study-ai.html" class="case-nav__link">
+        <span class="case-nav__label">← Previous</span>
+        <span class="case-nav__title">Teaching a machine to govern content</span>
       </a>
-      <a href="case-study-system.html" class="case-nav__link case-nav__link--right">
-        <span class="case-nav__label">Next →</span>
-        <span class="case-nav__title">Content design system</span>
+      <a href="case-studies.html" class="case-nav__link case-nav__link--right">
+        <span class="case-nav__label">All</span>
+        <span class="case-nav__title">Case studies</span>
       </a>
     </nav>
 
   </article>
 
   </main>
+
+  <!-- CASE LIGHTBOX -->
+  <dialog id="case-lightbox" class="lightbox" onclick="if(event.target===this)this.close()">
+    <button class="lightbox__close" onclick="this.closest('dialog').close()" aria-label="Close">&times;</button>
+    <img id="case-lightbox-img" src="" alt="" class="lightbox__img" />
+  </dialog>
+
+  <script>
+    function openCaseLightbox(src, alt) {
+      const img = document.getElementById('case-lightbox-img');
+      img.src = src;
+      img.alt = alt;
+      document.getElementById('case-lightbox').showModal();
+    }
+  </script>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -291,7 +311,7 @@
         Sabrina Kan
       </a>
       <nav class="footer__links">
-        <a href="case-studies.html">Case Studies</a>
+        <a href="case-studies.html">Case studies</a>
         <a href="writing-samples.html">Writing</a>
         <a href="about.html">About</a>
         <a href="resume.html">Resume</a>

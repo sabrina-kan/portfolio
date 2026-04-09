@@ -20,11 +20,14 @@
     </a>
     <ul class="nav__links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="case-studies.html">Case studies</a></li>
       <li><a href="writing-samples.html">Writing</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="resume.html">Résumé</a></li>
+      <li><a href="resume.html">Resume</a></li>
     </ul>
+    <button class="nav__hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <main id="main-content">
@@ -33,118 +36,64 @@
   <header class="page-hero">
     <div class="page-hero__inner">
       <p class="page-hero__breadcrumb">Portfolio</p>
-      <h1 class="page-hero__title">Writing Samples</h1>
+      <h1 class="page-hero__title">Writing samples</h1>
       <p class="page-hero__sub">
-        Essays, guides, and opinions on content design, plain language,
-        and the craft of writing for digital products.
+        A curated selection of UI copy, error messages, and product content.
       </p>
     </div>
   </header>
 
-  <!-- WRITING GRID -->
+  <!-- SAMPLES LIST -->
   <section class="section">
     <div class="container">
+      <div class="samples-list">
 
-      <div class="writing-grid">
-
-        <a href="#" class="writing-card scroll-reveal">
-          <span class="writing-card__type">Essay</span>
-          <h2 class="writing-card__title">The Case for Plain Language in Financial Products</h2>
-          <p class="writing-card__excerpt">
-            When users can't understand their own bank, trust evaporates. We spend so much time
-            designing the visual experience of financial products, and almost no time on the
-            language — the thing people actually read before they make a decision.
-            Plain language isn't dumbing things down. It's respecting your users' time and
-            intelligence enough to say what you actually mean.
-          </p>
-          <div class="writing-card__footer">
-            <span class="writing-card__pub">Content Clarity · Jan 2025</span>
-            <span class="writing-card__link">Read full essay →</span>
+        <!-- Sample 3 -->
+        <article class="sample scroll-reveal">
+          <div class="sample__header">
+            <div class="sample__eyebrow"><span class="sample__type">Product copy</span><span class="sample__meta">Knox Documentation · 2022</span></div>
+            <h2 class="sample__title">Knox Suite admin guide blurbs</h2>
           </div>
-        </a>
+          <button class="sample__screenshot-btn" onclick="openSampleLightbox('images/admin-guide-blurbs.png', 'Knox Suite admin guide blurbs')">
+            <img src="images/admin-guide-blurbs.png" alt="Knox Suite guides page with a grid of product cards, each showing a product name and a one-sentence description linking to its admin guide." class="sample__img" />
+            <span class="sample__zoom-hint">Click to enlarge</span>
+          </button>
+          <p class="sample__note">Each blurb had to do a lot of work in very little space: distinguish one Knox product from another, use consistent grammatical structure, and avoid jargon while still being precise enough for IT admins. The challenge was writing to a technically sophisticated audience without losing the clarity that makes these scannable.</p>
+        </article>
 
-        <a href="#" class="writing-card scroll-reveal" style="transition-delay:.1s">
-          <span class="writing-card__type">Guide</span>
-          <h2 class="writing-card__title">How to Write Error Messages That Don't Make Users Feel Stupid</h2>
-          <p class="writing-card__excerpt">
-            The worst error messages blame the user. "Invalid input." "An error has occurred."
-            "Your session has expired." None of these tell you what went wrong or what to do next.
-            The best error messages do three things: acknowledge what happened, explain why, and
-            give the user a clear next step. Here's a framework for writing them.
-          </p>
-          <div class="writing-card__footer">
-            <span class="writing-card__pub">Personal blog · Nov 2024</span>
-            <span class="writing-card__link">Read full guide →</span>
+        <!-- Sample 4 -->
+        <article class="sample scroll-reveal">
+          <div class="sample__header">
+            <div class="sample__eyebrow"><span class="sample__type">Onboarding copy</span><span class="sample__meta">Knox Suite · 2025</span></div>
+            <h2 class="sample__title">Knox registration flow — product selection</h2>
           </div>
-        </a>
-
-        <a href="#" class="writing-card scroll-reveal" style="transition-delay:.2s">
-          <span class="writing-card__type">Explainer</span>
-          <h2 class="writing-card__title">Content Design vs. UX Writing: What's the Difference?</h2>
-          <p class="writing-card__excerpt">
-            The titles are often used interchangeably, but they describe meaningfully different
-            scopes of work. A UX writer writes the words. A content designer shapes the information
-            architecture, the mental models, the flow of a product — and also writes the words.
-            The distinction matters when you're hiring, when you're scoping work, and when you're
-            arguing for a seat at the table.
-          </p>
-          <div class="writing-card__footer">
-            <span class="writing-card__pub">Medium · Sep 2024</span>
-            <span class="writing-card__link">Read full piece →</span>
-          </div>
-        </a>
-
-        <a href="#" class="writing-card scroll-reveal" style="transition-delay:.3s">
-          <span class="writing-card__type">Tutorial</span>
-          <h2 class="writing-card__title">Building a Content Audit: A Step-by-Step Guide</h2>
-          <p class="writing-card__excerpt">
-            A content audit is the unglamorous foundation of every good content project.
-            It tells you what you have, where it lives, who owns it, and whether it's doing
-            its job. Most people put it off because it sounds boring. This guide walks you
-            through a practical, repeatable audit process you can complete in a week.
-          </p>
-          <div class="writing-card__footer">
-            <span class="writing-card__pub">Content Clarity · Jul 2024</span>
-            <span class="writing-card__link">Read full tutorial →</span>
-          </div>
-        </a>
-
-        <a href="#" class="writing-card scroll-reveal" style="transition-delay:.1s">
-          <span class="writing-card__type">Opinion</span>
-          <h2 class="writing-card__title">When "Just Say It Simply" Is Actually the Hard Part</h2>
-          <p class="writing-card__excerpt">
-            Plain language is deceptively hard. Anyone can make something complicated. Making it
-            simple requires you to understand it deeply, to know which details matter, and to
-            trust your reader enough to leave things out. The real skill is knowing what to cut.
-            This is what I've learned from editing thousands of UI strings.
-          </p>
-          <div class="writing-card__footer">
-            <span class="writing-card__pub">Personal blog · Apr 2024</span>
-            <span class="writing-card__link">Read full piece →</span>
-          </div>
-        </a>
-
-        <a href="#" class="writing-card scroll-reveal" style="transition-delay:.2s">
-          <span class="writing-card__type">Guide</span>
-          <h2 class="writing-card__title">Writing for Accessibility: Beyond the Checklist</h2>
-          <p class="writing-card__excerpt">
-            Accessible writing isn't just about alt text and heading hierarchy. It's about
-            writing that doesn't assume everyone shares the same context, cognitive load, or
-            reading speed as you. It's about writing that works for someone using a screen
-            reader, someone reading under stress, and someone whose first language isn't English.
-            Here's what I've learned working with accessibility teams.
-          </p>
-          <div class="writing-card__footer">
-            <span class="writing-card__pub">A List Apart · Feb 2024</span>
-            <span class="writing-card__link">Read full guide →</span>
-          </div>
-        </a>
+          <button class="sample__screenshot-btn" onclick="openSampleLightbox('images/knox-registration-flow.png', 'Knox registration flow product selection')">
+            <img src="images/knox-registration-flow.png" alt="Knox registration page titled 'Let's get you started with Samsung Knox services' showing four paths: try a free trial, access a purchased license, set up Knox Suite Base Plan, or set up Galaxy Enterprise Edition devices." class="sample__img" />
+            <span class="sample__zoom-hint">Click to enlarge</span>
+          </button>
+          <p class="sample__note">Onboarding copy for a multi-product platform is a content IA problem as much as a writing problem. Users arrive with different levels of purchase intent and different product knowledge. Each option needed to be specific enough to self-select accurately, without assuming the reader already knows what Knox Suite or Knox Configure means.</p>
+        </article>
 
       </div>
     </div>
   </section>
 
   </main>
+
+  <!-- SAMPLE LIGHTBOX -->
+  <dialog id="sample-lightbox" class="lightbox" onclick="if(event.target===this)this.close()">
+    <button class="lightbox__close" onclick="this.closest('dialog').close()" aria-label="Close">&times;</button>
+    <img id="sample-lightbox-img" src="" alt="" class="lightbox__img" />
+  </dialog>
+
+  <script>
+    function openSampleLightbox(src, alt) {
+      const img = document.getElementById('sample-lightbox-img');
+      img.src = src;
+      img.alt = alt;
+      document.getElementById('sample-lightbox').showModal();
+    }
+  </script>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -154,10 +103,10 @@
         Sabrina Kan
       </a>
       <nav class="footer__links">
-        <a href="case-studies.html">Case Studies</a>
+        <a href="case-studies.html">Case studies</a>
         <a href="writing-samples.html">Writing</a>
         <a href="about.html">About</a>
-        <a href="resume.html">Résumé</a>
+        <a href="resume.html">Resume</a>
       </nav>
       <span class="footer__copy">© 2026 Sabrina Kan</span>
       <p class="footer__comment" aria-hidden="true">/* every word earned its place — the others were cut */</p>
