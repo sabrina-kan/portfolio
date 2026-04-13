@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teaching a machine to govern content — Sabrina Kan</title>
+  <title>Building an AI reviewer that works at the speed of content — Sabrina Kan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Nunito:wght@300;400;600&family=DM+Mono&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     <ul class="nav__links">
       <li><a href="index.html">Home</a></li>
       <li><a href="case-studies.html">Case studies</a></li>
-      <li><a href="writing-samples.html">Writing</a></li>
+
       <li><a href="about.html">About</a></li>
       <li><a href="resume.html">Resume</a></li>
     </ul>
@@ -39,9 +39,9 @@
         <a href="case-studies.html">← Case studies</a>
         <span>/ 02</span>
       </p>
-      <h1 class="page-hero__title">Teaching a machine to govern content</h1>
+      <h1 class="page-hero__title">Building an AI reviewer that works at the speed of content</h1>
       <p class="page-hero__sub">
-        How I designed an AI-powered review system to scale content governance across a growing team — all without adding process overhead.
+        How I turned a content governance gap into an AI-powered solution.
       </p>
       <div class="page-hero__tags">
         <span class="tag tag--purple">AI strategy</span>
@@ -74,10 +74,10 @@
     <div class="case-section">
       <h2 class="case-section__heading">Project overview</h2>
       <p>
-        As the content design team scaled from one to six people, informal content quality processes stopped being viable. Reviews were inconsistent. Style guide adherence was dependent on whoever happened to review a given string. And with a 20-product platform and ~50 contributors outside the team, we had no way to catch issues upstream.
+        As our content design team grew, I saw an opportunity to put the content design system we'd spent years building to a new use. Having watched the same content governance issues play out when I was lead editor for the technical writing team, I knew <strong>static documentation wouldn't be enough to keep our standards consistent at scale</strong>.
       </p>
       <p>
-        The solution: build an AI-powered content review agent that could encode the team's standards, flag issues at scale, and free up human review cycles for the judgment calls that actually require a person.
+        I got the team on board and started building a custom AI agent trained on our own guidelines, centred around trustworthiness from the start. The challenge was maintaining project momentum with constraints that were difficult to control: limited tooling and a content design system that we were still building out.
       </p>
     </div>
 
@@ -85,66 +85,80 @@
     <div class="case-section">
       <h2 class="case-section__heading">The problem</h2>
       <p>
-        Manual content reviews don't scale. As the team grew, I noticed three patterns:
+        Our team had invested years into building a rigorous content design system: a style guide, a glossary, and a growing library of content components. We had everything documented, but it just wasn't being used consistently.
       </p>
-      <ul>
-        <li><strong>Inconsistency at the edges.</strong> Contributors outside the content team weren't catching style issues because they didn't know the rules. By the time strings reached review, dozens of decisions had already been made.</li>
-        <li><strong>Review bottlenecks.</strong> Every piece of UI copy required a content designer sign-off. That worked when there was one product. It broke down at ten.</li>
-        <li><strong>Style guide drift.</strong> The style guide existed, but it wasn't operationalized. Writers referenced it inconsistently, and no one had time to audit every release.</li>
-      </ul>
+      <p>
+        This wasn't a behavioural issue. We were expecting writers to cross-reference guidelines as they drafted copy, but in reality, that's not how writing really works. Without context to guide writers towards the relevant guidelines, the rules just didn't stick.
+      </p>
+      <p>
+        The result? Inconsistent terminology, minor style deviations, and a review bottleneck that was costing us. The other senior writer and I were each spending an estimated 5 hours a week on style and terminology review, which was time we weren't spending on strategic-level work like domain modelling and content frameworks. It was necessary work for the glossary we were building, though, and this bottleneck was slowing us down.
+      </p>
+      <p>That got me thinking:</p>
+      <div class="callout">
+        <p>How could we enforce our content rules and guidelines without depending on people's memory?</p>
+      </div>
     </div>
 
-    <!-- The constraint -->
+    <!-- The biggest constraint -->
     <div class="case-section">
-      <h2 class="case-section__heading">The constraint</h2>
+      <h2 class="case-section__heading">The biggest constraint</h2>
       <p>
-        We couldn't add headcount. The ask was to scale governance without adding process overhead — meaning whatever we built had to be low-friction to use and easy to maintain.
+        The first thing that came to mind was the stringent security restrictions we had to abide by. We weren't allowed to use any native third-party integrations, Figma plugins, or any software that wasn't explicitly approved by IT.
       </p>
-      <p>
-        That ruled out more checklists, more review stages, or any solution that required a human to do more work. The system needed to do the work.
-      </p>
+      <p>If there was a solution, it would have to come from within.</p>
     </div>
 
-    <!-- The insight -->
+    <!-- The breakthrough -->
     <div class="case-section">
-      <h2 class="case-section__heading">The insight</h2>
+      <h2 class="case-section__heading">The breakthrough</h2>
       <p>
-        Most content review tasks aren't judgment calls — they're pattern matching. Capitalization, punctuation, tone markers, prohibited terms, button label conventions: these are rules, not taste. And rules can be encoded.
+        The turning point came when the user research team demoed the CLI version of our internal AI agent to us. They were using it to consolidate research insights, and we immediately saw that it was capable of a lot more than we originally thought. In our previous experiments with the web version, we had encountered a relatively limited featureset.
+      </p>
+      <p>
+        We ran an experiment in which we manually exported frames from Figma to test whether the agent could ingest images, and it could.
       </p>
       <div class="callout">
-        <p>If I could separate the rule-based work from the judgment-based work, I could automate the former and focus the team on the latter.</p>
+        <p>Now, the agent could review UI copy in context, not just as raw strings, so it could evaluate content the way users would encounter it.</p>
       </div>
-      <p>
-        The question wasn't whether to use AI — it was what to teach it, and how to know if it was learning the right things.
-      </p>
     </div>
 
-    <!-- The approach -->
+    <!-- The end-to-end approach -->
     <div class="case-section">
-      <h2 class="case-section__heading">The approach</h2>
+      <h2 class="case-section__heading">The end-to-end approach</h2>
+      <p>
+        After identifying the problem and discovering a solution, the team and I divided the work out into phases:
+      </p>
       <div class="process-steps">
         <div class="process-step">
           <span class="process-step__num">1</span>
           <div>
-            <p class="process-step__title">Structuring the knowledge base</p>
-            <p class="process-step__desc">Before any model could be built, I had to make our standards machine-readable. I audited the existing style guide and categorized every rule by type: prescriptive (always do X), prohibitive (never do Y), and contextual (do X when Z).</p>
-            <p class="process-step__desc">Contextual rules were the hardest to encode — they required me to make implicit knowledge explicit. This surfaced gaps in the style guide itself, which I documented and resolved as I went.</p>
+            <p class="process-step__title">Converting the knowledge base from unstructured to structured data</p>
+            <p class="process-step__desc">The obvious first input was our style guide, but it was written for humans, not machines. I asked the other senior writer to convert it to a machine-readable format that would be optimized for consistent interpretation by the agent.</p>
+            <p class="process-step__desc">We also experimented with different chunking strategies to ensure that our embeddings would include just the right amount of context for the agent to parse, meaning that the output it generated would actually be useful to the writer.</p>
           </div>
         </div>
         <div class="process-step">
           <span class="process-step__num">2</span>
           <div>
             <p class="process-step__title">Sequencing the content architecture</p>
-            <p class="process-step__desc">I designed the agent's review logic in layers: surface-level checks first (spelling, casing, punctuation), then structural checks (label length, parallel construction, empty state completeness), then tone and clarity checks last.</p>
-            <p class="process-step__desc">Sequencing mattered because later checks are only meaningful if earlier ones pass. A tone flag on a string with a spelling error is noise — it dilutes signal and erodes trust in the system.</p>
+            <p class="process-step__desc">The style guide was only the start. We defined a roadmap to embed our full content design system as training data for our custom agent:</p>
+            <ul>
+              <li><strong>Style guide (complete)</strong> — Voice, tone, grammar, and formatting rules</li>
+              <li><strong>Glossary (complete)</strong> — ~250 terms with definitions, usage notes, and stop words</li>
+              <li><strong>Content component library (planned)</strong> — Reusable patterns to replace ad-hoc string creation</li>
+            </ul>
+            <p class="process-step__desc">The goal was for each layer to work together and govern different aspects of our content: how we write, what we call things, and the structure. With these three layers, the agent should have a complete picture of our content standards.</p>
           </div>
         </div>
         <div class="process-step">
           <span class="process-step__num">3</span>
           <div>
             <p class="process-step__title">Building the evaluation framework</p>
-            <p class="process-step__desc">With any AI system, the real design challenge is evaluation: how do you know it's working? I built a test set of ~200 strings — a mix of real production copy and intentionally flawed examples — and defined pass/fail criteria for each check.</p>
-            <p class="process-step__desc">We run iterative quality benchmarking cycles, tracking precision and recall by check type. When the agent flags something a human wouldn't, we investigate whether the rule needs refinement or the agent needs retraining. The evaluation framework keeps the human-in-the-loop without making every decision human-dependent.</p>
+            <p class="process-step__desc">We knew that this governance system would only be as good as its calibration, so I designed a human-in-the-loop evaluation process alongside another writer on the team.</p>
+            <p class="process-step__desc">Every month, we batch review 50+ strings to independently assess whether we agree with the agent's output. If not, we document that rationale. Then, we calculate inter-rater reliability using Cohen's Kappa, which gives us a statistically significant measure of how consistently the agent's judgments align with ours.</p>
+            <div class="callout">
+              <p>Why did we design the evaluation framework this way? It's because of trust. We knew it was important to build a data-driven evidence base to show the team and our stakeholders that the agent was capable of reviewing our content outputs to a high standard.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -153,26 +167,27 @@
     <!-- The outcomes -->
     <div class="case-section">
       <h2 class="case-section__heading">The outcomes</h2>
+      <p>The agent is in active development, with the evaluation framework already running. Here's what we've seen so far:</p>
       <div class="process-steps">
         <div class="process-step">
           <span class="process-step__num">1</span>
           <div>
-            <p class="process-step__title">Content review coverage at scale</p>
-            <p class="process-step__desc">The agent now runs on every content submission across the platform, catching rule-based issues before they reach a human reviewer. The team's review time shifted from catching mechanical errors to making strategic decisions.</p>
+            <p class="process-step__title">Governance that scales without extra headcount</p>
+            <p class="process-step__desc">Once fully trained, the agent operates as a persistent reviewer, and is available at any point in the writing process without competing priorities.</p>
           </div>
         </div>
         <div class="process-step">
           <span class="process-step__num">2</span>
           <div>
-            <p class="process-step__title">A living style guide</p>
-            <p class="process-step__desc">The process of making our standards machine-readable also made them clearer to humans. The structured rule taxonomy is now used as the canonical reference for onboarding new writers and resolving style disagreements.</p>
+            <p class="process-step__title">Senior writers unblocked</p>
+            <p class="process-step__desc">Getting routine style and terminology review off our plates frees us up for more strategic-level work like content strategy and upstream product involvement, and lets us focus on judgment calls an AI agent can't make.</p>
           </div>
         </div>
         <div class="process-step">
           <span class="process-step__num">3</span>
           <div>
-            <p class="process-step__title">A replicable governance model</p>
-            <p class="process-step__desc">The framework — structured knowledge base, layered review logic, test-set evaluation — is designed to be replicable. Other teams at the company have expressed interest in adapting it for localization QA and accessibility checks.</p>
+            <p class="process-step__title">An evaluation framework designed to catch what metrics miss</p>
+            <p class="process-step__desc">Based on early team feedback on initial output, we designed the evaluation framework to highlight the gap between rule-following and intent, specifically to catch what a pure accuracy metric wouldn't reveal. That calibration data will be instrumental in making the agent trustworthy enough to actually use.</p>
           </div>
         </div>
       </div>
@@ -203,7 +218,7 @@
       </a>
       <nav class="footer__links">
         <a href="case-studies.html">Case studies</a>
-        <a href="writing-samples.html">Writing</a>
+
         <a href="about.html">About</a>
         <a href="resume.html">Resume</a>
       </nav>
