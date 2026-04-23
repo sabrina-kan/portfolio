@@ -156,8 +156,9 @@
             <p class="process-step__title">Building the evaluation framework</p>
             <p class="process-step__desc">We knew that this governance system would only be as good as its calibration, so I designed a human-in-the-loop evaluation process alongside another writer on the team.</p>
             <p class="process-step__desc">Every month, we batch review 50+ strings to independently assess whether we agree with the agent's output. If not, we document that rationale. Then, we calculate inter-rater reliability using Cohen's Kappa, which gives us a statistically significant measure of how consistently the agent's judgments align with ours.</p>
+            <p>Why did we design the evaluation framework this way? It's because of trust.</p>
             <div class="callout">
-              <p>Why did we design the evaluation framework this way? It's because of trust. We knew it was important to build a data-driven evidence base to show the team and our stakeholders that the agent was capable of reviewing our content outputs to a high standard.</p>
+              <p>We knew it was important to build a data-driven evidence base to show the team and our stakeholders that the agent was capable of reviewing our content outputs to a high standard.</p>
             </div>
           </div>
         </div>
@@ -181,6 +182,11 @@
           <div>
             <p class="process-step__title">Senior writers unblocked</p>
             <p class="process-step__desc">Getting routine style and terminology review off our plates frees us up for more strategic-level work like content strategy and upstream product involvement, and lets us focus on judgment calls an AI agent can't make.</p>
+            <p class="process-step__desc">As an example, I spend a lot of time explaining how and when to use terms to junior writers. Now, the agent can provide that context in a natural, conversational way.</p>
+            <button class="case-img-btn" onclick="openCaseLightbox('images/ai-agent-sample-response.png', 'A sample response from the AI agent reviewer')">
+              <img src="images/ai-agent-sample-response.png" alt="A sample response from the AI agent reviewer" class="case-img-btn__img" />
+              <span class="case-img-btn__hint">Click to enlarge</span>
+            </button>
           </div>
         </div>
         <div class="process-step">
@@ -227,6 +233,21 @@
       <p class="footer__comment" aria-hidden="true">/* naming things is the hardest part · rules before taste · humans for the judgment calls */</p>
     </div>
   </footer>
+
+  <!-- CASE LIGHTBOX -->
+  <dialog id="case-lightbox" class="lightbox" onclick="if(event.target===this)this.close()">
+    <button class="lightbox__close" onclick="this.closest('dialog').close()" aria-label="Close">&times;</button>
+    <img id="case-lightbox-img" src="" alt="" class="lightbox__img" />
+  </dialog>
+
+  <script>
+    function openCaseLightbox(src, alt) {
+      const img = document.getElementById('case-lightbox-img');
+      img.src = src;
+      img.alt = alt;
+      document.getElementById('case-lightbox').showModal();
+    }
+  </script>
 
   <script src="main.js"></script>
 </body>
